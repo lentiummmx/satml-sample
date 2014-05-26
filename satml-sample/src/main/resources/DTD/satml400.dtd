@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+S@T Markup Language (S@TML) Document Type Definition.
+S@TML is an XML language. Typical usage:
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE satml SYSTEM "http://www.simalliance.org/DTD/satml400.dtd">
+<satml>
+...
+</satml>
+For compatibility with the Wireless Markup Language 1.1 (WML)
+also the respective DOCTYPE and <wml> ... </wml> may be used.
+Change History (versions equal to S@T 01.10 S@TML specification):
+satml100.dtd V1.0.0 2000/03 - First approved release.
+satml101.dtd V1.0.1 2000/04 - Added missing sat-plug-in in DTD.
+satml102.dtd V1.0.2 2000/05 - Lexical entities added / explained,
+new sat-do-clr in sat-const, sat-value in sat-const required.
+satml103.dtd V1.0.3 2000/06 - Type dcs-t for sat-dcs, no sat-cmdqual
+in sat-send-sms, sat-ussddcs in sat-send-ussd, sat-in/out(list)
+in sat-encrypt/decrypt and sat-plug-in, sat-mac for sat-decrypt.
+satml104.dtd V1.0.4 2000/07 - No changes to DTD, change history added
+satml105.dtd V1.0.5 2001/05 - extension of sat-gen-stk
+satml106.dtd V1.0.6 2001/06 – minor fix, string replaced by %vdata-t for satoutput
+attribute in sat-gen-stk.
+satml400.dtd V4.0.0 2009 – Removed: sat-var, sat-sps, sat-help, sat-serv-id,
+no-wait, sat-cleanbuf, sat-outvarlist, sat-return, sat-href (sat-local-info),
+sat-method; For "sat-" tagged elements removed: xml:lang, id, class;
+Added: sat-dcs (satml, wml, setvar, postfield, option, sat-case, input, satdecrypt),
+sat-no-wait (go, option, a), sat-var-id (sat-var-id), sat-name (satsend-
+ussd), sat-use-template (card); Added as a possible child: sat-switch in
+card, go in p, setvar in template.
+-->
+<!-- ............... Entities ............................. -->
+<!-- quotation mark -->
+<!ENTITY quot "&#34;">
+<!-- ampersand -->
+<!ENTITY amp "&#38;#38;">
+<!-- apostrophe -->
+<!ENTITY apos "&#39;">
+<!-- less than -->
+<!ENTITY lt "&#38;#60;">
+<!-- greater than -->
+<!ENTITY gt "&#62;">
+<!-- non-breaking space -->
+<!ENTITY nbsp "&#160;">
+<!-- soft hyphen (discretionary hyphen) -->
+<!ENTITY shy "&#173;">
+<!-- boolean -->
+<!ENTITY % bool-t "(true|false)">
+<!-- number -->
+<!ENTITY % num-t "NMTOKEN">
+<!-- hex str -->
+<!ENTITY % hex-t "NMTOKEN">
+<!-- string withiout variables -->
+<!ENTITY % data-t "CDATA">
+<!-- string with variables -->
+<!ENTITY % vdata-t "CDATA">
+<!-- hex str with variables -->
+<!ENTITY % vhex-t "%vdata-t;">
+<!-- URI, URL or URN with variables -->
+<!ENTITY % HREF-t "%vdata-t;">
+<!-- variable name -->
+<!ENTITY % varname-t "NMTOKEN">
+<!-- comma separated list of variable names (e.g. "var1,var2,var3")-->
+<!ENTITY % varlist-t "CDATA">
+<!-- comma separated list of input values given by variable references or
+constant strings (e.g. "const text,$(var1),$(var2)")-->
+<!ENTITY % inputlist-t "CDATA">
+<!-- Dial number (e.g. +12345)-->
+<!ENTITY % dialnumber-t "CDATA">
+<!ENTITY % id-attr "
+id ID #IMPLIED">
+<!ENTITY % class-attr "
+class CDATA #IMPLIED">
+<!ENTITY % id-attrs "
+%id-attr;
+%class-attr;">
+<!-- ............... Decks ................................ -->
+<!ENTITY % decls "sat-const*, template?">
+<!ELEMENT satml (head?, %decls;, card+)>
+<!ATTLIST satml
+sat-storage (dynamic | static) "static"
+sat-dcs (sms | ucs2 | auto) "auto"
+%id-attr;
+>
+<!ELEMENT wml (head?, template?, card+)>
+<!ATTLIST wml
+sat-storage (dynamic | static) "static"
+sat-dcs (sms | ucs2 | auto) "auto"
+%id-attr;
+>
+<!ELEMENT head (access | meta)+>
+<!ATTLIST head
+%id-attrs;
+>
+<!ELEMENT access EMPTY>
+<!ATTLIST access
+domain CDATA #IMPLIED
+path CDATA #IMPLIED
+%id-attrs;
+>
+<!ELEMENT meta EMPTY>
+<!ATTLIST meta
+http-equiv CDATA #IMPLIED
+name CDATA #IMPLIED
+forua %bool-t; "false"
+content CDATA #IMPLIED
+scheme CDATA #IMPLIED
+%id-attrs;
+>
+<!-- ............... Declarations ......................... -->
+<!ELEMENT template (do | onevent | setvar)*>
+<!ELEMENT sat-const EMPTY>
+<!ATTLIST sat-const
+sat-name %varname-t; #REQUIRED
+sat-value %data-t; #REQUIRED
+>
+<!-- ............... Cards ................................ -->
+<!ENTITY % satstmt "sat-send-sms | sat-refresh | sat-gen-stk | sat-exit | sat-setup-call | sat-send-ussd | sat-local-info | sat-encrypt | sat-decrypt | sat-plug-in | sat-extract | sat-switch">
+<!ELEMENT card (onevent*, timer?, (do | p | setvar | go | prev | refresh | %satstmt;)*)>
+<!ATTLIST card
+newcontext %bool-t; "false"
+sat-history %bool-t; "true"
+sat-chain-next %bool-t; "false"
+sat-use-template %bool-t; "true"
+%id-attr;
+>
+<!-- ............... Fields ............................... -->
+<!ENTITY % emph "em | strong | b | i | u | big | small">
+<!ENTITY % layout "br">
+<!ENTITY % txt "#PCDATA | %emph;">
+<!ENTITY % flow "%txt; | %layout; | img | anchor | a | table">
+<!ENTITY % satfld "sat-play-tone | sat-inkey">
+<!ENTITY % fields "%flow; | input | select | fieldset | %satfld; ">
+<!ELEMENT p (%fields; | do | go)*>
+<!ATTLIST p
+sat-auto-clr %bool-t; "false"
+sat-prio (normal | high) "normal"
+>
+<!ELEMENT input EMPTY>
+<!ATTLIST input
+title %vdata-t; #IMPLIED
+name %varname-t; #REQUIRED
+type (text | password) "text"
+value %vdata-t; #IMPLIED
+format CDATA "*M"
+emptyok %bool-t; "false"
+maxlength %num-t; "255"
+sat-minlength %num-t; #IMPLIED
+sat-dcs (sms | ucs2 | auto) "auto"
+>
+<!ELEMENT select (optgroup | option)+>
+<!ATTLIST select
+title %vdata-t; #IMPLIED
+name %varname-t; #IMPLIED
+iname %varname-t; #IMPLIED
+>
+<!ELEMENT option (#PCDATA | onevent)*>
+<!ATTLIST option
+title %vdata-t; #IMPLIED
+value %vdata-t; #IMPLIED
+onpick %HREF-t; #IMPLIED
+sat-no-wait %bool-t; "false"
+sat-dcs (sms | ucs2 | binary | auto) "auto"
+>
+<!ELEMENT optgroup (optgroup | option)+>
+<!ATTLIST optgroup
+title %vdata-t; #IMPLIED
+>
+<!ELEMENT fieldset (%fields; | do | go)*>
+<!ATTLIST fieldset
+sat-auto-clr %bool-t; "false"
+sat-prio (normal | high) "normal"
+>
+<!ENTITY % tone-t "(dial|busy|congestion|radio-ack|
+radio-gone|error|call-wait|ring|
+beep|ack|nack)">
+<!ELEMENT sat-play-tone EMPTY>
+<!ATTLIST sat-play-tone
+sat-title %vdata-t; #IMPLIED
+sat-tone %tone-t; "beep"
+sat-duration %num-t; #IMPLIED
+>
+<!ELEMENT sat-inkey EMPTY>
+<!ATTLIST sat-inkey
+sat-title %vdata-t; #IMPLIED
+sat-name %varname-t; #REQUIRED
+sat-format (M | 1M | Y | 1Y | N | 1N) "M"
+>
+<!-- ............... Content .............................. -->
+<!ELEMENT br EMPTY>
+<!-- ............... Navigation ........................... -->
+<!ELEMENT anchor (#PCDATA | br | img | go | prev | refresh)*>
+<!ATTLIST anchor
+title %vdata-t; #IMPLIED
+>
+<!ELEMENT a (#PCDATA | br | img)*>
+<!ATTLIST a
+href %HREF-t; #REQUIRED
+sat-no-wait %bool-t; "false"
+title %vdata-t; #IMPLIED
+>
+<!ENTITY % task "go | prev | noop | refresh | sat-switch">
+<!ELEMENT do (%task;)>
+<!ATTLIST do
+type CDATA #REQUIRED
+label %vdata-t; #IMPLIED
+name NMTOKEN #IMPLIED
+>
+<!ELEMENT go (postfield | setvar)*>
+<!ATTLIST go
+href %HREF-t; #REQUIRED
+sat-no-wait %bool-t; "false"
+sendreferer %bool-t; "false"
+method (post | get) "get"
+>
+<!ELEMENT prev (setvar)*>
+<!ELEMENT refresh (setvar)*>
+<!ELEMENT noop EMPTY>
+<!ELEMENT sat-switch (sat-case)+>
+<!ATTLIST sat-switch
+sat-name %varname-t; #REQUIRED
+sat-defaulturl %HREF-t; #IMPLIED
+sat-casesensitive %bool-t; "false"
+>
+<!ELEMENT sat-case EMPTY>
+<!ATTLIST sat-case
+sat-value %vdata-t; #REQUIRED
+sat-href %HREF-t; #REQUIRED
+sat-dcs (sms | ucs2 | binary | auto) "auto"
+>
+<!ELEMENT sat-exit EMPTY>
+<!-- ............... Statements ........................... -->
+<!ELEMENT setvar EMPTY>
+<!ATTLIST setvar
+name %varname-t; #REQUIRED
+value %vdata-t; #IMPLIED
+sat-var-id %hex-t; #IMPLIED
+sat-dcs (sms | ucs2 | binary | auto) "auto"
+>
+<!ELEMENT postfield EMPTY>
+<!ATTLIST postfield
+name NMTOKEN #REQUIRED
+value %vdata-t; #REQUIRED
+sat-dcs (sms | ucs2 | binary | auto) "auto"
+>
+<!ELEMENT sat-extract EMPTY>
+<!ATTLIST sat-extract
+sat-destvar %varname-t; #REQUIRED
+sat-srcvar %varname-t; #REQUIRED
+sat-startindex %num-t; "0"
+sat-length %num-t; #REQUIRED
+>
+<!ENTITY % crypto-attrs "
+sat-check (none | mac) 'none'
+sat-crypt %bool-t; 'false'
+sat-kic %hex-t; '00'
+sat-kid %hex-t; '00'">
+<!ELEMENT sat-encrypt EMPTY>
+<!ATTLIST sat-encrypt
+%crypto-attrs;
+sat-inlist %inputlist-t; #REQUIRED
+sat-out %varname-t; #REQUIRED
+>
+<!ELEMENT sat-decrypt EMPTY>
+<!ATTLIST sat-decrypt
+%crypto-attrs;
+sat-mac %hex-t; #IMPLIED
+sat-padding %hex-t; "00"
+sat-in CDATA #REQUIRED
+sat-sec-msg CDATA #IMPLIED
+sat-outlist %varlist-t; #REQUIRED
+sat-dcs (sms | ucs2 | binary) "binary"
+>
+<!-- ............... STK Commands .......................... -->
+<!ELEMENT sat-send-sms (#PCDATA)>
+<!ATTLIST sat-send-sms
+sat-title %vdata-t; #IMPLIED
+sat-dest %dialnumber-t; #REQUIRED
+sat-smsc %dialnumber-t; #IMPLIED
+sat-period %num-t; #IMPLIED
+sat-pid %hex-t; "00"
+sat-dcs (sms | ucs2 | binary) "sms"
+>
+<!ELEMENT sat-setup-call EMPTY>
+<!ATTLIST sat-setup-call
+sat-confirm %vdata-t; #IMPLIED
+sat-title %vdata-t; #IMPLIED
+sat-dest %dialnumber-t; #REQUIRED
+sat-cmdqual %hex-t; "00"
+>
+<!ELEMENT sat-send-ussd EMPTY>
+<!ATTLIST sat-send-ussd
+sat-title %vdata-t; #IMPLIED
+sat-ussddcs %hex-t; #REQUIRED
+sat-data %hex-t; #REQUIRED
+sat-name %varname-t; #IMPLIED
+>
+<!ELEMENT sat-local-info EMPTY>
+<!ATTLIST sat-local-info
+sat-name %varname-t; #REQUIRED
+sat-cmdqual %hex-t; "00"
+>
+<!ELEMENT sat-refresh EMPTY>
+<!ATTLIST sat-refresh
+sat-files %hex-t; #IMPLIED
+sat-cmdqual %hex-t; "01"
+>
+<!ELEMENT sat-gen-stk EMPTY>
+<!ATTLIST sat-gen-stk
+sat-cmdtype %hex-t; #REQUIRED
+sat-cmdqual %hex-t; #REQUIRED
+sat-destdev %hex-t; #REQUIRED
+sat-data %hex-t; #IMPLIED
+sat-output %varname-t; #IMPLIED
+sat-encap %bool-t; "false"
+>
+<!-- ............... Plug-ins ............................ -->
+<!ELEMENT sat-plug-in EMPTY>
+<!ATTLIST sat-plug-in
+sat-uid %hex-t; #REQUIRED
+sat-inlist %inputlist-t; #IMPLIED
+sat-outlist %varlist-t; #IMPLIED
+>
+<!-- ......................................................
+The following section contains attributes and elements
+that are ignored during converting S@TML to S@T bytecode-->
+<!-- ......................................................
+............... Ignored attributes ...................
+...................................................... -->
+<!-- ............... Decks ................................ -->
+<!ATTLIST satml
+xml:lang NMTOKEN #IMPLIED
+%class-attr;
+>
+<!ATTLIST wml
+xml:lang NMTOKEN #IMPLIED
+%class-attr;
+>
+<!-- ............... Cards ................................ -->
+<!ENTITY % cardev-attrs "
+onenterforward %HREF-t; #IMPLIED
+onenterbackward %HREF-t; #IMPLIED
+ontimer %HREF-t; #IMPLIED">
+<!ATTLIST card
+title %vdata-t; #IMPLIED
+ordered %bool-t; "true"
+xml:lang NMTOKEN #IMPLIED
+%cardev-attrs;
+%class-attr;
+>
+<!ATTLIST template
+%cardev-attrs;
+%id-attrs;
+>
+<!-- ............... Fields ............................... -->
+<!ENTITY % TAlign "(left|right|center)">
+<!ENTITY % WrapMode "(wrap|nowrap)">
+<!ATTLIST p
+align %TAlign; "left"
+mode %WrapMode; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST input
+size %num-t; #IMPLIED
+tabindex %num-t; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST select
+value %vdata-t; #IMPLIED
+ivalue %vdata-t; #IMPLIED
+multiple %bool-t; "false"
+tabindex %num-t; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST option
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST optgroup
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST fieldset
+title %vdata-t; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!-- ............... Content .............................. -->
+<!ATTLIST br
+%id-attrs;
+>
+<!-- ............... Navigation ........................... -->
+<!ATTLIST anchor
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST a
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST do
+optional %bool-t; "false"
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ATTLIST go
+accept-charset CDATA #IMPLIED
+%id-attrs;
+>
+<!ATTLIST prev
+%id-attrs;
+>
+<!ATTLIST refresh
+%id-attrs;
+>
+<!ATTLIST noop
+%id-attrs;
+>
+<!-- ............... Statements ........................... -->
+<!ATTLIST setvar
+%id-attrs;
+>
+<!ATTLIST postfield
+%id-attrs;
+>
+<!-- ......................................................
+............... Ignored elements .....................
+...................................................... -->
+<!ELEMENT timer EMPTY>
+<!ATTLIST timer
+name NMTOKEN #IMPLIED
+value %vdata-t; #REQUIRED
+%id-attrs;
+>
+<!ELEMENT onevent (%task;)>
+<!ATTLIST onevent
+type CDATA #REQUIRED
+%id-attrs;
+>
+<!ELEMENT em (%flow;)*>
+<!ATTLIST em
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT strong (%flow;)*>
+<!ATTLIST strong
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT i (%flow;)*>
+<!ATTLIST i
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT b (%flow;)*>
+<!ATTLIST b
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT u (%flow;)*>
+<!ATTLIST u
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT big (%flow;)*>
+<!ATTLIST big
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT small (%flow;)*>
+<!ATTLIST small
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ENTITY % len "CDATA">
+<!ENTITY % IAlign "(top|middle|bottom)">
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+alt %vdata-t; #REQUIRED
+src %HREF-t; #REQUIRED
+localsrc %vdata-t; #IMPLIED
+vspace %len; "0"
+hspace %len; "0"
+align %IAlign; "bottom"
+height %len; #IMPLIED
+width %len; #IMPLIED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT table (tr)+>
+<!ATTLIST table
+title %vdata-t; #IMPLIED
+align CDATA #IMPLIED
+columns %num-t; #REQUIRED
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!ELEMENT tr (td)+>
+<!ATTLIST tr
+%id-attrs;
+>
+<!ELEMENT td (%flow;)*>
+<!ATTLIST td
+xml:lang NMTOKEN #IMPLIED
+%id-attrs;
+>
+<!-- ............... The End .............................. -->

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE satml SYSTEM "../DTD/satml400.dtd" >
+<satml>
+	<!-- Welcome text -->
+	<card newcontext="true" id="we">
+		<p>
+			Welcome to SIMalliance.
+		</p>
+		<do type="accept">
+			<go href="#mm" />
+		</do>
+	</card>
+	<card newcontext="true" id="mm">
+		<p>
+			<!-- main menu -->
+			SATML Services
+			<select>
+				<!-- go to channel choice -->
+				<option>
+					Now on the air
+					<onevent type="onpick">
+						<go href="#cc">
+							<setvar name="time_choice" value="now" />
+						</go>
+					</onevent>
+				</option>
+				<!-- go to channel choice -->
+				<option>
+					Tonight
+					<onevent type="onpick">
+						<go href="#cc">
+							<setvar name="time_choice" value="tonight" />
+						</go>
+					</onevent>
+				</option>
+				<!-- go to weekly game -->
+				<option onpick="ref_game.xml"> Weekly game </option>
+			</select>
+		</p>
+	</card>
+	<!-- channel choice -->
+	<card id="cc">
+		<p>
+			<select title="TV $time_choice">
+				<!-- local channel -->
+				<!-- additional card must be introduced to get the local info -->
+				<option onpick="#pli"> Your local channel </option>
+				<!-- channel -->
+				<option>
+					&lt;Standard channel&gt;
+					<onevent type="onpick">
+						<go href="ref_proglist.xml">
+							<postfield name="time_choice" value="$(time_choice)" />
+							<postfield name="channel_choice" value="C1" />
+						</go>
+					</onevent>
+				</option>
+			</select>
+		</p>
+	</card>
+	<!-- provide local information -->
+	<card id="pli">
+		<sat-local-info sat-name="location" />
+		<do type="vnd.sat-process">
+			<go href="ref_proglist.xml">
+				<postfield name="time_choice" value="$(time_choice)" />
+				<postfield name="channel_choice" value="$(location)" />
+			</go>
+		</do>
+	</card>
+</satml>
