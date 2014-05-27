@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wml SYSTEM "http://www.simalliance.org/DTD/satml400.dtd">
+<!-- It is assumed that this page will be generated automatically by a content 
+	server dependent on the provided values of the variables time_choice channel_choice -->
+<wml>
+	<card newcontext="true">
+		<p>
+			<select name="prog" title="TV program">
+				<option value="FAQ on XML"> 20:00 - 20:45 FAQ on XML </option>
+				<option value="Squirrels"> 20:45 - 21:30 Squirrels </option>
+				<option value="News"> 21:30 - 21:45 News </option>
+			</select>
+			Would you like additional information?
+		</p>
+		<do type="accept">
+			<go href="ref_addproginfo.xml">
+				<postfield name="program" value="$prog" />
+			</go>
+		</do>
+		<do type="prev">
+			<go href="sim:/ref_main.xml#mm" />
+		</do>
+	</card>
+</wml>

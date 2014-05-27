@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE satml SYSTEM "http://www.simalliance.org/DTD/satml400.dtd" >
+<!-- It is assumed that this page will be generated automatically by a content 
+	server dependent on the provided value of the variable prog. -->
+<satml>
+	<template>
+		<do type="accept">
+			<go href="#in" />
+		</do>
+	</template>
+	<card newcontext="true" id="in">
+		<p>
+			This is a documentary film about
+			<a href="#sq"> squirrels </a>.<br />
+			The <a href="#au"> authors </a> have
+			done best effort to provide comprehensive
+			material on the <a href="#li"> life </a>
+			and <a href="#ha"> habits </a> of squirrels.
+		</p>
+		<do type="accept">
+			<go href="sim:/ref_main.xml" />
+		</do>
+	</card>
+	<card id="sq">
+		<p sat-auto-clr="true">
+			<em>Squirrels</em> are shy animals.
+		</p>
+	</card>
+	<card id="au">
+		<p sat-auto-clr="true">
+			<i>SIMalliance</i> consortium.
+		</p>
+	</card>
+	<card id="li">
+		<p sat-auto-clr="true"> Squirrels are living in woods. </p>
+	</card>
+	<card id="ha">
+		<p sat-auto-clr="true"> Squirrels are collecting nuts. </p>
+	</card>
+</satml>

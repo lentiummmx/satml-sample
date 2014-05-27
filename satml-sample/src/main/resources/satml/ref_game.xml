@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE satml SYSTEM "http://www.simalliance.org/DTD/satml106.dtd" >
+<satml sat-help="Enjoy playing the game">
+	<template>
+		<do type="accept">
+			<go href="#g" />
+		</do>
+		<do type="back">
+			<go href="#g" />
+		</do>
+	</template>
+	<card newcontext="true" id="g">
+		<p>
+			<select title="The Game">
+				<option sat-help="read question" onpick="#q">
+					Question of the week
+				</option>
+				<option sat-help="vocal answer" onpick="#c">
+					Have a call
+				</option>
+				<option sat-help="post your answer" onpick="#a">
+					Post your secret answer
+				</option>
+			</select>
+		</p>
+	</card>
+	<card id="q">
+		<p>
+			Which animal eat nuts?
+		</p>
+	</card>
+	<card id="c">
+		<sat-setup-call sat-confirm="Do you want to set up a call?"
+			sat-title="calling..." sat-dest="+4989123456789" />
+	</card>
+	<card id="a">
+		<p>
+			Enter your answer:
+			<input name="var_answer" />
+		</p>
+		<do type="accept">
+			<go href="ref_answer.xml">
+				<postfield name="answer" value="$var_answser" />
+			</go>
+		</do>
+	</card>
+</satml>
