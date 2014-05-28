@@ -203,6 +203,7 @@ title %vdata-t; #IMPLIED
 <!ELEMENT do (%task;)>
 <!ATTLIST do
 type CDATA #REQUIRED
+typo CDATA #IMPLIED
 label %vdata-t; #IMPLIED
 name NMTOKEN #IMPLIED
 >
