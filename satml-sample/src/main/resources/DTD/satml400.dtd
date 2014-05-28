@@ -202,8 +202,6 @@ title %vdata-t; #IMPLIED
 <!ENTITY % task "go | prev | noop | refresh | sat-switch">
 <!ELEMENT do (%task;)>
 <!ATTLIST do
-type CDATA #REQUIRED
-optional %bool-t; "false"
 label %vdata-t; #IMPLIED
 name NMTOKEN #IMPLIED
 >
@@ -403,6 +401,8 @@ xml:lang NMTOKEN #IMPLIED
 %id-attrs;
 >
 <!ATTLIST do
+type CDATA #REQUIRED
+optional %bool-t; "false"
 xml:lang NMTOKEN #IMPLIED
 %id-attrs;
 >
