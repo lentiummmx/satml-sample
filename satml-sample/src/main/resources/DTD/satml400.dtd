@@ -400,12 +400,6 @@ xml:lang NMTOKEN #IMPLIED
 xml:lang NMTOKEN #IMPLIED
 %id-attrs;
 >
-<!ATTLIST do
-type CDATA #REQUIRED
-optional %bool-t; "false"
-xml:lang NMTOKEN #IMPLIED
-%id-attrs;
->
 <!ATTLIST go
 accept-charset CDATA #IMPLIED
 %id-attrs;
