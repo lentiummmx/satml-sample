@@ -202,7 +202,7 @@ title %vdata-t; #IMPLIED
 <!ENTITY % task "go | prev | noop | refresh | sat-switch">
 <!ELEMENT do (%task;)>
 <!ATTLIST do
-typo CDATA #REQUIRED
+type CDATA #REQUIRED
 label %vdata-t; #IMPLIED
 name NMTOKEN #IMPLIED
 >
