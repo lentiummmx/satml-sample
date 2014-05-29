@@ -141,6 +141,7 @@ sat-prio (normal | high) "normal"
 title %vdata-t; #IMPLIED
 name %varname-t; #REQUIRED
 type (text | password) "text"
+typo (text | password) "text"
 value %vdata-t; #IMPLIED
 format CDATA "*M"
 emptyok %bool-t; "false"
@@ -439,6 +440,7 @@ value %vdata-t; #REQUIRED
 <!ELEMENT onevent (%task;)>
 <!ATTLIST onevent
 type CDATA #REQUIRED
+typo CDATA #IMPLIED
 %id-attrs;
 >
 <!ELEMENT em (%flow;)*>
