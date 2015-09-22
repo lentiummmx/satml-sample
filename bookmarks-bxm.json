@@ -367,6 +367,9 @@
         },
         {
           "uri": "http://stackoverflow.com/questions/15117790/java-lang-noclassdeffounderror-while-deploying-a-war-file-that-was-created-by-ma"
+        },
+        {
+          "uri": "http://forum.spring.io/forum/spring-projects/container/724356-how-to-use-javaconfig-to-declare-a-jndi-datasource"
         }
       ]
     },
