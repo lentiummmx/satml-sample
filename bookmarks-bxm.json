@@ -361,6 +361,9 @@
           ],
           "type": "text/x-moz-place",
           "uri": "http://stackoverflow.com/questions/23294492/exclude-jpa-2-0-from-jboss-7-1-in-order-to-use-hibernate-4-3"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/13786685/spring3-2-and-jboss-as-7"
         }
       ]
     },
