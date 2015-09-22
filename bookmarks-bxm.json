@@ -370,6 +370,9 @@
         },
         {
           "uri": "http://forum.spring.io/forum/spring-projects/container/724356-how-to-use-javaconfig-to-declare-a-jndi-datasource"
+        },
+        {
+          "uri": "http://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html"
         }
       ]
     },
