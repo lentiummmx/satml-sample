@@ -1,0 +1,378 @@
+{
+  "guid": "root________",
+  "title": "",
+  "index": 0,
+  "dateAdded": 1440804166188000,
+  "lastModified": 1441142869864000,
+  "id": 1,
+  "type": "text/x-moz-place-container",
+  "root": "placesRoot",
+  "children": [
+    {
+      "guid": "menu________",
+      "title": "Menú Marcadores",
+      "index": 0,
+      "dateAdded": 1440804166188000,
+      "lastModified": 1442534043131000,
+      "id": 2,
+      "type": "text/x-moz-place-container",
+      "root": "bookmarksMenuFolder",
+      "children": [
+        {
+          "guid": "9WNvZphbscpN",
+          "title": "Añadidos recientemente",
+          "index": 0,
+          "dateAdded": 1441040718872000,
+          "lastModified": 1441040719195000,
+          "id": 7,
+          "annos": [
+            {
+              "name": "Places/SmartBookmark",
+              "flags": 0,
+              "expires": 4,
+              "value": "RecentlyBookmarked"
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "place:folder=BOOKMARKS_MENU&folder=UNFILED_BOOKMARKS&folder=TOOLBAR&queryType=1&sort=12&maxResults=10&excludeQueries=1"
+        },
+        {
+          "guid": "r08LZZEfgdQ0",
+          "title": "Etiquetas recientes",
+          "index": 1,
+          "dateAdded": 1441040719194000,
+          "lastModified": 1441040719312000,
+          "id": 8,
+          "annos": [
+            {
+              "name": "Places/SmartBookmark",
+              "flags": 0,
+              "expires": 4,
+              "value": "RecentTags"
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "place:type=6&sort=14&maxResults=10"
+        },
+        {
+          "guid": "VPxQjKfjeksW",
+          "title": "Microsoft Word - CUB_Anexo 36.doc - CUB_Anexo36.pdf",
+          "index": 2,
+          "dateAdded": 1441992106419000,
+          "lastModified": 1441992106423000,
+          "id": 19,
+          "charset": "UTF-8",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://www.abm.org.mx/legislacion-y-regulacion/juridico/anexoscub/CUB_Anexo36.pdf"
+        },
+        {
+          "guid": "KvnVFMdbI_Ep",
+          "title": "DOF - Diario Oficial de la Federación",
+          "index": 3,
+          "dateAdded": 1441992197375000,
+          "lastModified": 1441992197381000,
+          "id": 20,
+          "charset": "UTF-8",
+          "iconuri": "http://dof.gob.mx/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://dof.gob.mx/nota_detalle_popup.php?codigo=5077777"
+        },
+        {
+          "guid": "PKZjZm7_Gd89",
+          "title": "reportes regulatorios serie r-04 c - Buscar con Google",
+          "index": 4,
+          "dateAdded": 1441992657433000,
+          "lastModified": 1441992657433000,
+          "id": 21,
+          "charset": "UTF-8",
+          "iconuri": "https://www.google.com.mx/images/branding/product/ico/googleg_lodp.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "https://www.google.com.mx/search?q=reportes+regulatorios+serie+r-04+c&ie=utf-8&oe=utf-8&gws_rd=cr&ei=_QjzVdm4IYObyATt7JzoDg"
+        },
+        {
+          "guid": "1wjzlKkayIAd",
+          "title": "UML Designer Documentation",
+          "index": 5,
+          "dateAdded": 1442014366167000,
+          "lastModified": 1442014366167000,
+          "id": 23,
+          "charset": "UTF-8",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": "UML Designer documentation"
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://www.umldesigner.org/"
+        },
+        {
+          "guid": "BPw1mbeFz8gn",
+          "title": "spring - Excluding JPA Subsystem from JBoss EAP 6.1 - Trying to use JPA 2.1 in JBoss EAP 6.1 - Stack Overflow",
+          "index": 6,
+          "dateAdded": 1442244973275000,
+          "lastModified": 1442244973275000,
+          "id": 25,
+          "charset": "UTF-8",
+          "iconuri": "http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=6cd6089ee7f6",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://stackoverflow.com/questions/21078551/excluding-jpa-subsystem-from-jboss-eap-6-1-trying-to-use-jpa-2-1-in-jboss-eap"
+        },
+        {
+          "guid": "YNgdp5wlVOTj",
+          "title": "java - JBoss hangs on start - Stack Overflow",
+          "index": 7,
+          "dateAdded": 1442256802101000,
+          "lastModified": 1442256802101000,
+          "id": 28,
+          "charset": "UTF-8",
+          "iconuri": "http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=6cd6089ee7f6",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://stackoverflow.com/questions/24678848/jboss-hangs-on-start"
+        },
+        {
+          "guid": "Hwxjdf0JwlRU",
+          "title": "Chocolatey Gallery",
+          "index": 8,
+          "dateAdded": 1442352656024000,
+          "lastModified": 1442352656102000,
+          "id": 29,
+          "charset": "UTF-8",
+          "iconuri": "https://chocolatey.org/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "https://chocolatey.org/"
+        },
+        {
+          "guid": "Eak_Z-bp4t5s",
+          "title": "eclipse - Failed to load the JNI shared Library (JDK) - Stack Overflow",
+          "index": 9,
+          "dateAdded": 1442502588945000,
+          "lastModified": 1442502589007000,
+          "id": 30,
+          "charset": "UTF-8",
+          "iconuri": "http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://stackoverflow.com/questions/7352493/failed-to-load-the-jni-shared-library-jdk"
+        },
+        {
+          "guid": "OJbwCOLvIAOu",
+          "title": "Gestión de Proyectos de Desarrollo de Sistemas de Información",
+          "index": 10,
+          "dateAdded": 1442534043131000,
+          "lastModified": 1442534043162000,
+          "id": 31,
+          "charset": "UTF-8",
+          "iconuri": "http://www.madrid.org/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://www.madrid.org/arquitecturasw/proyectos"
+        }
+      ]
+    },
+    {
+      "guid": "toolbar_____",
+      "title": "Barra de herramientas",
+      "index": 1,
+      "dateAdded": 1440804166188000,
+      "lastModified": 1442255550254000,
+      "id": 3,
+      "type": "text/x-moz-place-container",
+      "root": "toolbarFolder",
+      "children": [
+        {
+          "guid": "kJzP3Ot9Xaoo",
+          "title": "Más visitados",
+          "index": 0,
+          "dateAdded": 1441040718726000,
+          "lastModified": 1441040718870000,
+          "id": 6,
+          "annos": [
+            {
+              "name": "Places/SmartBookmark",
+              "flags": 0,
+              "expires": 4,
+              "value": "MostVisited"
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "place:sort=8&maxResults=10"
+        },
+        {
+          "guid": "2xgO0vP6m26O",
+          "title": "Sign In :: Bonobo Git Server",
+          "index": 1,
+          "dateAdded": 1441142889773000,
+          "lastModified": 1441142889779000,
+          "id": 18,
+          "charset": "UTF-8",
+          "iconuri": "http://localhost/Bonobo.Git.Server/favicon.ico?v=2",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://localhost/Bonobo.Git.Server/Home/LogOn?returnUrl=%2FBonobo.Git.Server%2F"
+        },
+        {
+          "guid": "a8ju9AsKyjjz",
+          "title": "QR Code Generator – create QR codes for free (Logo, T-Shirt, vCard, EPS)",
+          "index": 2,
+          "dateAdded": 1442010764909000,
+          "lastModified": 1442010765007000,
+          "id": 22,
+          "charset": "UTF-8",
+          "iconuri": "http://goqr.me/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": "Free for everyone (commercial and print usage allowed). QR codes on business cards, T-Shirts, mugs and more! Logo QR code possible."
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://goqr.me/#t=url"
+        },
+        {
+          "guid": "N5H2mwytJa5I",
+          "title": "Chapter 1. Getting started",
+          "index": 3,
+          "dateAdded": 1442242865367000,
+          "lastModified": 1442242865398000,
+          "id": 24,
+          "charset": "UTF-8",
+          "iconuri": "https://docs.jboss.org/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "https://docs.jboss.org/hibernate/validator/4.0.1/reference/en/html/validator-gettingstarted.html"
+        },
+        {
+          "guid": "igB3JjAxLA-r",
+          "title": "Class Loading in AS7 - JBoss AS 7.1 - Project Documentation Editor",
+          "index": 4,
+          "dateAdded": 1442255238254000,
+          "lastModified": 1442255238254000,
+          "id": 26,
+          "charset": "UTF-8",
+          "iconuri": "https://docs.jboss.org/author/favicon.ico",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "https://docs.jboss.org/author/display/AS71/Class+Loading+in+AS7#ClassLoadinginAS7-JBossDeploymentStructureFile"
+        },
+        {
+          "guid": "lOlQD5_3drpJ",
+          "title": "jpa 2.0 - Exclude JPA 2.0 from JBoss 7.1 in order to use hibernate 4.3 - Stack Overflow",
+          "index": 5,
+          "dateAdded": 1442255547571000,
+          "lastModified": 1442255547571000,
+          "id": 27,
+          "charset": "UTF-8",
+          "iconuri": "http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d",
+          "annos": [
+            {
+              "name": "bookmarkProperties/description",
+              "flags": 0,
+              "expires": 4,
+              "value": ""
+            }
+          ],
+          "type": "text/x-moz-place",
+          "uri": "http://stackoverflow.com/questions/23294492/exclude-jpa-2-0-from-jboss-7-1-in-order-to-use-hibernate-4-3"
+        }
+      ]
+    },
+    {
+      "guid": "unfiled_____",
+      "title": "Marcadores sin clasificar",
+      "index": 3,
+      "dateAdded": 1440804166188000,
+      "lastModified": 1441142886878000,
+      "id": 5,
+      "type": "text/x-moz-place-container",
+      "root": "unfiledBookmarksFolder"
+    }
+  ]
+}
