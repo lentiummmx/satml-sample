@@ -364,6 +364,9 @@
         },
         {
           "uri": "http://stackoverflow.com/questions/13786685/spring3-2-and-jboss-as-7"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/15117790/java-lang-noclassdeffounderror-while-deploying-a-war-file-that-was-created-by-ma"
         }
       ]
     },
