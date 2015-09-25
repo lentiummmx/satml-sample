@@ -382,6 +382,9 @@
         },
         {
           "uri": "http://www.informit.com/articles/article.aspx?p=1671224&seqNum=2"
+        },
+        {
+          "uri": "http://www.mkyong.com/spring-security/spring-security-password-hashing-example/"
         }
       ]
     },
