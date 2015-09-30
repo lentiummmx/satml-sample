@@ -388,6 +388,9 @@
         },
         {
           "uri": "https://dzone.com/articles/jpa-performance-optimization"
+        },
+        {
+          "uri": "http://www.journaldev.com/4058/primefaces-spring-4-with-jpa-hibernate-eclipselink-example-tutorial"
         }
       ]
     },
