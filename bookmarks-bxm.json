@@ -391,6 +391,9 @@
         },
         {
           "uri": "http://www.journaldev.com/4058/primefaces-spring-4-with-jpa-hibernate-eclipselink-example-tutorial"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/10769051/eclipselinkjpavendoradapter-instead-of-hibernatejpavendoradapter-issue"
         }
       ]
     },
