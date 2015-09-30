@@ -394,6 +394,9 @@
         },
         {
           "uri": "http://stackoverflow.com/questions/10769051/eclipselinkjpavendoradapter-instead-of-hibernatejpavendoradapter-issue"
+        },
+        {
+          "uri": "http://www.eclipse.org/eclipselink/documentation/2.5/solutions/jboss.htm"
         }
       ]
     },
