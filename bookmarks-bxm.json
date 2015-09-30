@@ -397,6 +397,9 @@
         },
         {
           "uri": "http://www.eclipse.org/eclipselink/documentation/2.5/solutions/jboss.htm"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/27254556/componentscan-basepackageclasses-naming-convention"
         }
       ]
     },
