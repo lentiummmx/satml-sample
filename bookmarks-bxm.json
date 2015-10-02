@@ -409,6 +409,9 @@
         },
         {
           "uri": "http://tesis.ipn.mx/bitstream/handle/123456789/8029/com1032.pdf?sequence=1"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/21633555/how-to-inject-authenticationmanager-using-java-configuration-in-a-custom-filter"
         }
       ]
     },
