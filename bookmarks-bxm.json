@@ -412,6 +412,12 @@
         },
         {
           "uri": "http://stackoverflow.com/questions/21633555/how-to-inject-authenticationmanager-using-java-configuration-in-a-custom-filter"
+        },
+        {
+          "uri": "https://code.google.com/p/crypto-js/"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/23561104/how-to-encrypt-and-decrypt-string-with-my-passphrase-in-java-pc-not-mobile-plat"
         }
       ]
     },
