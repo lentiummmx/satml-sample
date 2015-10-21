@@ -421,6 +421,30 @@
         },
         {
           "uri": "https://code.google.com/p/open-archetypes/wiki/seamEarArchetype"
+        },
+        {
+          "uri": "https://github.com/shekhargulati/day22-spring-angularjs-demo-app/blob/master/src/main/java/com/getbookmarks/rest/PingResource.java"
+        },
+        {
+          "uri": "https://github.com/jhades/spring-mvc-angularjs-sample-app/tree/master/src/main/webapp/resources"
+        },
+        {
+          "uri": "http://www.mkyong.com/spring-security/spring-security-password-hashing-example/"
+        },
+        {
+          "uri": "https://github.com/philipsorst/angular-rest-springsecurity/blob/master/src/main/resources/context.xml"
+        },
+        {
+          "uri": "https://github.com/tastejs/todomvc/blob/gh-pages/examples/angularjs/js/app.js"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/23561104/how-to-encrypt-and-decrypt-string-with-my-passphrase-in-java-pc-not-mobile-plat"
+        },
+        {
+          "uri": "https://github.com/nevins-b/javascript-bcrypt/blob/master/examples/generatehash.html"
+        },
+        {
+          "uri": "http://labs.tineye.com/color/"
         }
       ]
     },
