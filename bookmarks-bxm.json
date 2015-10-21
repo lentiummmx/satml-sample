@@ -445,6 +445,27 @@
         },
         {
           "uri": "http://labs.tineye.com/color/"
+        },
+        {
+          "uri": "http://www.madrid.org/arquitecturasw/proyectos/fases/analisis"
+        },
+        {
+          "uri": "http://www.milestone.com.mx/CursoModeladoNegociosBPMN.htm"
+        },
+        {
+          "uri": "https://github.com/genedelisa/spring-mvc3-javaconfig/blob/master/src/main/java/com/rockhoppertech/mvc/web/config/WebMvcConfig.java"
+        },
+        {
+          "uri": "http://stackoverflow.com/questions/23294492/exclude-jpa-2-0-from-jboss-7-1-in-order-to-use-hibernate-4-3"
+        },
+        {
+          "uri": "https://spring.io/blog/2015/01/12/spring-and-angular-js-a-secure-single-page-application"
+        },
+        {
+          "uri": "http://www.javacodegeeks.com/2011/04/simple-big-o-notation-post.html"
+        },
+        {
+          "uri": "http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/"
         }
       ]
     },
